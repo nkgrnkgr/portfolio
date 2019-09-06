@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Route, withRouter } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router';
 import { PortFolioLayout } from './components/PortfolioLayout';
-import { Header } from './components/Header';
+import { Navbar } from './components/Navbar';
 import { HomeLayout } from './components/HomeLayout';
 import './App.css';
 
@@ -19,7 +19,7 @@ const App: React.FC<AppProps> = ({ history }) => {
 
   return (
     <div className="container">
-      <Header
+      <Navbar
         activeMenuIndex={activeMenuIndex}
         menuItems={menuItems}
         handleOnClickMenu={handleOnClickMenu}

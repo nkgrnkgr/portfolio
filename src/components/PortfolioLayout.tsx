@@ -10,6 +10,15 @@ export const PortFolioLayout: React.FC<{}> = () => {
       <Grid.Column mobile={16} tablet={8} computer={4}>
         <div>portfolio2</div>
       </Grid.Column>
+      <Grid.Column mobile={16} tablet={8} computer={4}>
+        <div>portfolio3</div>
+      </Grid.Column>
+      <Grid.Column mobile={16} tablet={8} computer={4}>
+        <div>portfolio4</div>
+      </Grid.Column>
+      <Grid.Column mobile={16} tablet={8} computer={4}>
+        <div>portfolio5</div>
+      </Grid.Column>
     </Grid>
   );
 };
