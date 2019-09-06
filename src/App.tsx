@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { Route, withRouter } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router';
+import { PortFolioLayout } from './components/PortfolioLayout';
+import { Header } from './components/Header';
+import { HomeLayout } from './components/HomeLayout';
 import './App.css';
 
-const App: React.FC = () => {
+type AppProps = RouteComponentProps;
+
+const App: React.FC<AppProps> = ({ history }) => {
+  const [activeMenuIndex, setActiveMenuIndex] = useState(0);
+  const menuItems = ['home', 'portfolio', 'slide', 'links'];
+
+  const handleOnClickMenu = (menuIndex: number) => {
+    setActiveMenuIndex(menuIndex);
+    history.push(menuItems[menuIndex]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header
+        activeMenuIndex={activeMenuIndex}
+        menuItems={menuItems}
+        handleOnClickMenu={handleOnClickMenu}
+      />
+      <Route path="/" exact component={HomeLayout} />
+      <Route path="/home" exact component={HomeLayout} />
+      <Route path="/portfolio" component={PortFolioLayout} />
     </div>
   );
-}
+};
 
-export default App;
+export default withRouter(App);
