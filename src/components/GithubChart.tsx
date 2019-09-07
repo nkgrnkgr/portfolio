@@ -7,7 +7,7 @@ export interface GithubChartProps {
   data: {
     labels: string[];
     datasets: DataSet[];
-  };
+  } | null;
   options: {};
 }
 
@@ -32,7 +32,9 @@ export const GithubChart: React.FC<GithubChartProps> = ({ data, options }) => {
           <Image src={githublogo} style={{ width: '24px' }} avatar />
         </a>
       </Header>
-      <Doughnut data={data} width={20} height={20} options={options} />
+      {data && (
+        <Doughnut data={data} width={20} height={20} options={options} />
+      )}
     </div>
   );
 };
