@@ -9,6 +9,8 @@ export interface GithubChartProps {
     datasets: DataSet[];
   } | null;
   options: {};
+  width: number;
+  height: number;
 }
 
 interface DataSet {
@@ -19,7 +21,12 @@ interface DataSet {
   borderWidth: number;
 }
 
-export const GithubChart: React.FC<GithubChartProps> = ({ data, options }) => {
+export const GithubChart: React.FC<GithubChartProps> = ({
+  data,
+  options,
+  width,
+  height,
+}) => {
   return (
     <div style={{ textAlign: 'center' }}>
       <Header as="h2" inverted>
@@ -33,7 +40,7 @@ export const GithubChart: React.FC<GithubChartProps> = ({ data, options }) => {
         </a>
       </Header>
       {data && (
-        <Doughnut data={data} width={20} height={20} options={options} />
+        <Doughnut data={data} width={width} height={height} options={options} />
       )}
     </div>
   );

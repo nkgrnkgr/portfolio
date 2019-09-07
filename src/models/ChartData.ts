@@ -28,6 +28,9 @@ export const createChartData = (json: { [key: string]: number }) => {
   };
 };
 
+export const width = 1;
+export const height = 1;
+
 export const options = {
   legend: {
     labels: {
