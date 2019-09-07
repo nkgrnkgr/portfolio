@@ -26,7 +26,7 @@ export const HomeLayout: React.FC = () => {
         </Grid.Column>
         <Grid.Column mobile={16} tablet={8} computer={8}>
           {isLoading ? (
-            <Loader />
+            <Loader inverted />
           ) : (
             <GithubChart
               data={data}
