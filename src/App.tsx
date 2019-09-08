@@ -5,6 +5,7 @@ import { PortFolioLayout } from './components/PortfolioLayout';
 import { Navbar } from './components/Navbar';
 import { HomeLayout } from './components/HomeLayout';
 import './App.css';
+import { PageHeader } from './components/PageHeader';
 
 type AppProps = RouteComponentProps;
 
@@ -19,6 +20,7 @@ const App: React.FC<AppProps> = ({ history }) => {
 
   return (
     <div className="container">
+      <PageHeader />
       <Navbar
         activeMenuIndex={activeMenuIndex}
         menuItems={menuItems}
