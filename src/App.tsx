@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Route, withRouter } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router';
 import { PortFolioLayout } from './components/PortfolioLayout';
-import { Navbar } from './components/Navbar';
 import { HomeLayout } from './components/HomeLayout';
 import './App.css';
 import { PageHeader } from './components/PageHeader';
@@ -20,10 +19,9 @@ const App: React.FC<AppProps> = ({ history }) => {
 
   return (
     <div className="container">
-      <PageHeader />
-      <Navbar
-        activeMenuIndex={activeMenuIndex}
+      <PageHeader
         menuItems={menuItems}
+        activeMenuIndex={activeMenuIndex}
         handleOnClickMenu={handleOnClickMenu}
       />
       <Route path="/" exact component={HomeLayout} />

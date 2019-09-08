@@ -5,6 +5,13 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { Avatar, Icon } from '@material-ui/core';
 import logo from '../images/logo.svg';
+import { TabLayout } from './TabLayout';
+
+interface Props {
+  menuItems: string[];
+  activeMenuIndex: number;
+  handleOnClickMenu: (index: number) => void;
+}
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -26,7 +33,11 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const PageHeader: React.FC = () => {
+export const PageHeader: React.FC<Props> = ({
+  menuItems,
+  activeMenuIndex,
+  handleOnClickMenu,
+}) => {
   const classes = useStyles();
 
   return (
@@ -47,6 +58,11 @@ export const PageHeader: React.FC = () => {
             <Icon className="fab fa-github" />
           </a>
         </Toolbar>
+        <TabLayout
+          menuItems={menuItems}
+          activeMenuIndex={activeMenuIndex}
+          handleOnClickMenu={handleOnClickMenu}
+        />
       </AppBar>
     </div>
   );

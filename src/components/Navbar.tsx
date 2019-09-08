@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Segment, Image, Sticky } from 'semantic-ui-react';
+import { Menu, Segment, Image } from 'semantic-ui-react';
 import logo from '../images/logo.svg';
 
 interface Props {
