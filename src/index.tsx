@@ -6,6 +6,7 @@ import { purple, teal } from '@material-ui/core/colors';
 import { createMuiTheme } from '@material-ui/core/styles';
 import ThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import App from './App';
+import './css/all.min.css';
 
 const theme = createMuiTheme({
   palette: {

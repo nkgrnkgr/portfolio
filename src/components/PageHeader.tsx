@@ -3,8 +3,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import { Avatar } from '@material-ui/core';
+import { Avatar, Icon } from '@material-ui/core';
 import logo from '../images/logo.svg';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -21,6 +20,9 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       flexGrow: 1,
     },
+    iconLink: {
+      color: '#fff',
+    },
   }),
 );
 
@@ -35,7 +37,15 @@ export const PageHeader: React.FC = () => {
           <Typography variant="h6" className={classes.title}>
             Nokogiri
           </Typography>
-          <Button color="inherit">Login</Button>
+          <a
+            aria-label="github"
+            href="https://github.com/nkgrnkgr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={classes.iconLink}
+          >
+            <Icon className="fab fa-github" />
+          </a>
         </Toolbar>
       </AppBar>
     </div>
