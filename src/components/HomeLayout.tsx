@@ -1,10 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { Grid, Loader } from 'semantic-ui-react';
+import {
+  createStyles,
+  makeStyles,
+  Grid,
+  CircularProgress,
+} from '@material-ui/core';
 import { GithubChart } from './GithubChart';
 import { Nokogiri } from './Nokogiri';
 import { fetchRepository } from '../services/Github';
 import { createChartData, options, width, height } from '../models/ChartData';
 import { GrassGraph } from './GrassGraph';
+
+const useStyles = makeStyles(() =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+  }),
+);
 
 export const HomeLayout: React.FC = () => {
   const [isLoading, setLoadingStatus] = useState(false);
@@ -18,30 +31,53 @@ export const HomeLayout: React.FC = () => {
     });
   }, []);
 
+  const classes = useStyles();
+
   return (
-    <Grid verticalAlign="middle" doubling cloumns={5}>
-      <Grid.Row>
-        <Grid.Column mobile={16} tablet={8} computer={8}>
-          <Nokogiri />
-        </Grid.Column>
-        <Grid.Column mobile={16} tablet={8} computer={8}>
-          {isLoading ? (
-            <Loader inverted />
-          ) : (
+    <div className={classes.root}>
+      {isLoading ? (
+        <Grid
+          container
+          spacing={3}
+          direction="row"
+          justify="center"
+          alignItems="center"
+          style={{ minHeight: '600px' }}
+        >
+          <CircularProgress />
+        </Grid>
+      ) : (
+        <Grid
+          container
+          spacing={3}
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
+          <Grid item xs={12} sm={6}>
+            <Nokogiri />
+          </Grid>
+          <Grid item xs={12} sm={6}>
             <GithubChart
               data={data}
               options={options}
               width={width}
               height={height}
             />
-          )}
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column only="tablet cumputer" tablet={16} computer={16}>
+          </Grid>
+        </Grid>
+      )}
+      <Grid
+        container
+        spacing={3}
+        direction="row"
+        justify="center"
+        alignItems="center"
+      >
+        <Grid item xs={12}>
           <GrassGraph />
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
+        </Grid>
+      </Grid>
+    </div>
   );
 };
