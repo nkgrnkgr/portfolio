@@ -42,31 +42,6 @@ export const HomeLayout: React.FC = () => {
           <GrassGraph />
         </Grid.Column>
       </Grid.Row>
-      <Grid.Row>
-        <Grid.Column only="tablet cumputer" tablet={16} computer={16}>
-          <GrassGraph />
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column only="tablet cumputer" tablet={16} computer={16}>
-          <GrassGraph />
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column only="tablet cumputer" tablet={16} computer={16}>
-          <GrassGraph />
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column only="tablet cumputer" tablet={16} computer={16}>
-          <GrassGraph />
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column only="tablet cumputer" tablet={16} computer={16}>
-          <GrassGraph />
-        </Grid.Column>
-      </Grid.Row>
     </Grid>
   );
 };

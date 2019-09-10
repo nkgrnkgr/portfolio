@@ -1,22 +1,29 @@
 import React from 'react';
-import { Header } from 'semantic-ui-react';
+import { Typography, makeStyles } from '@material-ui/core';
+
+const useStyle = makeStyles({
+  root: {
+    textAlign: 'center',
+  },
+});
 
 export const Nokogiri: React.FC<{}> = () => {
+  const classes = useStyle();
+
   return (
-    <div style={{ textAlign: 'center' }}>
-      <Header as="h1" style={{ fontSize: '5rem' }} icon inverted>
+    <div className={classes.root}>
+      <Typography color="textPrimary" variant="h2" gutterBottom>
         Nokogiri
-        <br />
-      </Header>
-      <Header inverted as="h3" style={{ fontSize: '3rem' }}>
-        Web Application Engineer
-        <span role="img" aria-label="a">
+      </Typography>
+      <Typography color="textPrimary" variant="h3" gutterBottom>
+        Software Engineer
+        <span role="img" aria-label="programmer">
           👨🏻‍💻
         </span>
-      </Header>
-      <Header inverted as="h4" style={{ fontSize: '2rem' }} color="green">
+      </Typography>
+      <Typography color="secondary" variant="h5" gutterBottom>
         TypeScript / React / Java / Vim
-      </Header>
+      </Typography>
     </div>
   );
 };

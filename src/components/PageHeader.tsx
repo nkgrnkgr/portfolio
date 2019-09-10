@@ -3,10 +3,11 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { Avatar, Icon } from '@material-ui/core';
+import { Avatar } from '@material-ui/core';
 import logo from '../images/logo.svg';
 import { TabLayout } from './TabLayout';
 import { HideOnScroll } from './HideOnScroll';
+import { GithubIconLink } from './GithubIconLink';
 
 interface Props {
   menuItems: string[];
@@ -50,15 +51,7 @@ export const PageHeader: React.FC<Props> = ({
             <Typography variant="h6" className={classes.title}>
               Nokogiri
             </Typography>
-            <a
-              aria-label="github"
-              href="https://github.com/nkgrnkgr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={classes.iconLink}
-            >
-              <Icon className="fab fa-github" />
-            </a>
+            <GithubIconLink />
           </Toolbar>
           <TabLayout
             menuItems={menuItems}
