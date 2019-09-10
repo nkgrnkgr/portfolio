@@ -1,4 +1,7 @@
-.container {
+body {
   background-color: #1b1c1d;
-  height: 100vh;
+}
+
+.container {
+  min-height: 100vh;
 }
