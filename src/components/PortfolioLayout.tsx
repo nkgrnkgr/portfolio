@@ -1,38 +1,47 @@
 import React from 'react';
-import { Grid, Header } from 'semantic-ui-react';
+import { Typography, makeStyles, createStyles, Grid } from '@material-ui/core';
 import { PortFolioCard } from './PortfolioCard';
 import { portfolioData } from '../models/Portfolio';
 
+const useStyles = makeStyles(() =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+  }),
+);
+
 export const PortFolioLayout: React.FC<{}> = () => {
+  const { root } = useStyles();
+
   return (
-    <div>
-      <Header inverted textAlign="center" as="h1">
+    <div className={root}>
+      <Typography align="center" color="textPrimary" variant="h2" gutterBottom>
         Portfolio
-      </Header>
-      <Grid doubling cloumns={4}>
-        {portfolioData.map(item => {
-          const {
-            title,
-            date,
-            comment,
-            linkUrl,
-            githubUrl,
-            image,
-            chips,
-          } = item;
+      </Typography>
+      <Grid
+        container
+        spacing={3}
+        direction="row"
+        justify="center"
+        alignItems="center"
+      >
+        {portfolioData.map(d => {
+          const { title, date, comment, linkUrl, githubUrl, image, chips } = d;
 
           return (
-            <Grid.Column key={title} mobile={16} tablet={8} computer={4}>
+            <Grid item xs={12} sm={3}>
               <PortFolioCard
-                title={title}
+                key={title}
                 imageUrl={image.url}
+                title={title}
                 description={comment}
                 published={date}
                 tags={chips}
                 githubUrl={githubUrl}
                 linkUrl={linkUrl}
               />
-            </Grid.Column>
+            </Grid>
           );
         })}
       </Grid>
