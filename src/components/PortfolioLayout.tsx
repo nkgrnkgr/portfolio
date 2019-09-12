@@ -8,15 +8,24 @@ const useStyles = makeStyles(() =>
     root: {
       flexGrow: 1,
     },
+    titleStyle: {
+      marginBottom: '50px',
+    },
   }),
 );
 
 export const PortFolioLayout: React.FC<{}> = () => {
-  const { root } = useStyles();
+  const { root, titleStyle } = useStyles();
 
   return (
     <div className={root}>
-      <Typography align="center" color="textPrimary" variant="h2" gutterBottom>
+      <Typography
+        align="center"
+        color="textPrimary"
+        variant="h2"
+        gutterBottom
+        className={titleStyle}
+      >
         Portfolio
       </Typography>
       <Grid container spacing={3} direction="row" alignItems="flex-start">

@@ -16,6 +16,9 @@ const useStyles = makeStyles(() =>
     root: {
       flexGrow: 1,
     },
+    loading: {
+      minHeight: '600px',
+    },
   }),
 );
 
@@ -42,7 +45,7 @@ export const HomeLayout: React.FC = () => {
           direction="row"
           justify="center"
           alignItems="center"
-          style={{ minHeight: '600px' }}
+          className={classes.loading}
         >
           <CircularProgress />
         </Grid>
