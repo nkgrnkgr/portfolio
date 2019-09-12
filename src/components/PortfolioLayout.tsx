@@ -1,52 +1,7 @@
 import React from 'react';
-import { Typography, makeStyles, createStyles, Grid } from '@material-ui/core';
-import { PortFolioCard } from './PortfolioCard';
 import { portfolioData } from '../models/Portfolio';
+import { ContensLayout } from './ContensLayout';
 
-const useStyles = makeStyles(() =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    titleStyle: {
-      marginBottom: '50px',
-    },
-  }),
-);
-
-export const PortFolioLayout: React.FC<{}> = () => {
-  const { root, titleStyle } = useStyles();
-
-  return (
-    <div className={root}>
-      <Typography
-        align="center"
-        color="textPrimary"
-        variant="h2"
-        gutterBottom
-        className={titleStyle}
-      >
-        Portfolio
-      </Typography>
-      <Grid container spacing={3} direction="row" alignItems="flex-start">
-        {portfolioData.map(d => {
-          const { title, date, comment, linkUrl, githubUrl, image, chips } = d;
-
-          return (
-            <Grid item xs={12} sm={3} key={title}>
-              <PortFolioCard
-                imageUrl={image.url}
-                title={title}
-                description={comment}
-                published={date}
-                tags={chips}
-                githubUrl={githubUrl}
-                linkUrl={linkUrl}
-              />
-            </Grid>
-          );
-        })}
-      </Grid>
-    </div>
-  );
+export const PortFolioLayout: React.FC = () => {
+  return <ContensLayout pageTitle="Portfolit" contens={portfolioData} />;
 };

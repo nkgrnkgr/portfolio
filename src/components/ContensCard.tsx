@@ -12,13 +12,14 @@ import {
   Box,
 } from '@material-ui/core';
 import { IconLink } from './IconLink';
+import { ContensModel } from '../models/Contens';
 
 const useStyles = makeStyles({
   card: {
     maxWidth: 345,
   },
   media: {
-    minHeight: '215px',
+    minHeight: '180px',
   },
   box: {
     marginTop: '10px',
@@ -28,19 +29,11 @@ const useStyles = makeStyles({
   },
 });
 
-interface Props {
-  imageUrl: string;
-  title: string;
-  description: string;
-  published: string;
-  tags: string[];
-  githubUrl: string;
-  linkUrl: string;
-}
+type Props = ContensModel;
 
-export const PortFolioCard: React.FC<Props> = ({
-  imageUrl,
+export const ContensCard: React.FC<Props> = ({
   title,
+  imageUrl,
   description,
   published,
   tags,
@@ -51,7 +44,7 @@ export const PortFolioCard: React.FC<Props> = ({
 
   return (
     <Card>
-      <CardHeader title={title} />
+      {title && <CardHeader title={title} />}
       <CardActionArea href={linkUrl}>
         <CardMedia className={classes.media} image={imageUrl} title="title" />
       </CardActionArea>
@@ -64,14 +57,16 @@ export const PortFolioCard: React.FC<Props> = ({
         >
           {`Published: ${published}`}
         </Typography>
-        <Typography
-          gutterBottom
-          variant="body2"
-          component="p"
-          color="textSecondary"
-        >
-          {description}
-        </Typography>
+        {description && (
+          <Typography
+            gutterBottom
+            variant="body2"
+            component="p"
+            color="textSecondary"
+          >
+            {description}
+          </Typography>
+        )}
         <Box className={classes.box}>
           {tags.map(tagName => (
             <Chip
@@ -85,7 +80,9 @@ export const PortFolioCard: React.FC<Props> = ({
         </Box>
       </CardContent>
       <CardActions>
-        <IconLink title="github" url={githubUrl} className="fab fa-github" />
+        {githubUrl && (
+          <IconLink title="github" url={githubUrl} className="fab fa-github" />
+        )}
         <IconLink title="open app" url={linkUrl} className="fas fa-rocket" />
       </CardActions>
     </Card>
