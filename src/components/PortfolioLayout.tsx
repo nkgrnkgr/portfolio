@@ -24,9 +24,8 @@ export const PortFolioLayout: React.FC<{}> = () => {
           const { title, date, comment, linkUrl, githubUrl, image, chips } = d;
 
           return (
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={12} sm={3} key={title}>
               <PortFolioCard
-                key={title}
                 imageUrl={image.url}
                 title={title}
                 description={comment}

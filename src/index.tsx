@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/semantic.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import { purple, teal } from '@material-ui/core/colors';
 import { createMuiTheme } from '@material-ui/core/styles';
