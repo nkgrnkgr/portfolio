@@ -67,13 +67,7 @@ export const HomeLayout: React.FC = () => {
           </Grid>
         </Grid>
       )}
-      <Grid
-        container
-        spacing={3}
-        direction="row"
-        justify="center"
-        alignItems="center"
-      >
+      <Grid container direction="row" justify="center" alignItems="center">
         <Grid item xs={12}>
           <GrassGraph />
         </Grid>
