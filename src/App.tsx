@@ -31,7 +31,7 @@ const App: React.FC<AppProps> = ({ history }) => {
           {' '}
         </div>
         <Route path="/" exact component={HomeLayout} />
-        <Route path="/home" exact component={HomeLayout} />
+        <Route path="/home" component={HomeLayout} />
         <Route path="/portfolio" component={PortFolioLayout} />
         <ScrollTop />
       </Container>
