@@ -8,6 +8,8 @@ import {
   makeStyles,
   CardHeader,
   CardActions,
+  Chip,
+  Box,
 } from '@material-ui/core';
 import { IconLink } from './IconLink';
 
@@ -16,7 +18,13 @@ const useStyles = makeStyles({
     maxWidth: 345,
   },
   media: {
-    height: '200px',
+    minHeight: '215px',
+  },
+  box: {
+    marginTop: '10px',
+  },
+  chip: {
+    margin: '2px',
   },
 });
 
@@ -64,6 +72,17 @@ export const PortFolioCard: React.FC<Props> = ({
         >
           {description}
         </Typography>
+        <Box className={classes.box}>
+          {tags.map(tagName => (
+            <Chip
+              label={tagName}
+              className={classes.chip}
+              color="secondary"
+              variant="outlined"
+              key={tagName}
+            />
+          ))}
+        </Box>
       </CardContent>
       <CardActions>
         <IconLink title="github" url={githubUrl} className="fab fa-github" />

@@ -6,7 +6,20 @@ import InHouseUse from '../images/inhouseUse.gif';
 
 export const portfolioData = [
   {
-    title: 'PutYourHandsUp',
+    title: 'Google Tasks client',
+    date: '2019/09/05',
+    comment: 'Google Tasks Client Using React Redux TypeScript',
+    linkUrl: 'https://tasks.nkgr.app/',
+    githubUrl: 'https://github.com/nkgrnkgr/GoogleTask-ReactApp',
+    image: {
+      url:
+        'https://cdn1.imggmi.com/uploads/2019/9/2/48e5eb2de6e851b367e18bac35d793b7-full.png',
+      title: 'Google Tasks client',
+    },
+    chips: ['React', 'Hooks', 'Redux', 'TypeScript', 'Redux-Saga'],
+  },
+  {
+    title: 'Google Tasks Client',
     date: '2019/03/08',
     comment: ' Where feedback to the speakers gather.',
     linkUrl: 'https://pyhu.nkgr.app',

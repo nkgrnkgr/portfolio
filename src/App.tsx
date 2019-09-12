@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Route, withRouter } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router';
-import { Container } from '@material-ui/core';
+import { Container, makeStyles } from '@material-ui/core';
 import { PortFolioLayout } from './components/PortfolioLayout';
 import { HomeLayout } from './components/HomeLayout';
 import './App.css';
@@ -9,6 +9,12 @@ import { PageHeader } from './components/PageHeader';
 import { ScrollTop } from './components/ScrollTop';
 
 type AppProps = RouteComponentProps;
+
+const useStyles = makeStyles({
+  app: {
+    height: '140px',
+  },
+});
 
 const App: React.FC<AppProps> = ({ history }) => {
   const [activeMenuIndex, setActiveMenuIndex] = useState(0);
@@ -19,6 +25,8 @@ const App: React.FC<AppProps> = ({ history }) => {
     history.push(menuItems[menuIndex]);
   };
 
+  const classes = useStyles();
+
   return (
     <div className="container">
       <PageHeader
@@ -27,7 +35,7 @@ const App: React.FC<AppProps> = ({ history }) => {
         handleOnClickMenu={handleOnClickMenu}
       />
       <Container>
-        <div id="back-to-top-anchor" style={{ height: '140px' }}>
+        <div id="back-to-top-anchor" className={classes.app}>
           {' '}
         </div>
         <Route path="/" exact component={HomeLayout} />
