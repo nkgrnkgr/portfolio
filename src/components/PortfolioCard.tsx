@@ -1,5 +1,22 @@
 import React from 'react';
-import { Card, Image, Icon } from 'semantic-ui-react';
+import {
+  Card,
+  CardMedia,
+  CardActionArea,
+  CardContent,
+  Typography,
+  Button,
+  makeStyles,
+} from '@material-ui/core';
+
+const useStyles = makeStyles({
+  card: {
+    maxWidth: 345,
+  },
+  media: {
+    height: '200px',
+  },
+});
 
 interface Props {
   imageUrl: string;
@@ -20,26 +37,34 @@ export const PortFolioCard: React.FC<Props> = ({
   githubUrl,
   linkUrl,
 }) => {
+  const classes = useStyles();
+
   return (
     <Card>
-      <Image src={imageUrl} wrapped ui={false} />
-      <Card.Content>
-        <Card.Header>{title}</Card.Header>
-        <Card.Meta>
-          <span className="date">{published}</span>
-        </Card.Meta>
-        <Card.Description>{description}</Card.Description>
-      </Card.Content>
-      <Card.Content extra>
-        <a href={githubUrl}>
-          <Icon name="github" />
-          Github
-        </a>
-        <a href={linkUrl}>
-          <Icon name="github alternate" />
-          Link
-        </a>
-      </Card.Content>
+      <CardActionArea href={linkUrl}>
+        <CardMedia className={classes.media} image={imageUrl} title="title" />
+      </CardActionArea>
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="h2">
+          {title}
+        </Typography>
+        <Typography
+          gutterBottom
+          variant="body2"
+          component="p"
+          color="textSecondary"
+        >
+          {published}
+        </Typography>
+        <Typography
+          gutterBottom
+          variant="body2"
+          component="p"
+          color="textSecondary"
+        >
+          {description}
+        </Typography>
+      </CardContent>
     </Card>
   );
 };

@@ -1,18 +1,19 @@
 import React from 'react';
-import { Image, Header } from 'semantic-ui-react';
+import { Typography, Box } from '@material-ui/core';
 
 export const GrassGraph: React.FC = () => {
   return (
     <div style={{ margin: '60px' }}>
-      <Header as="h2" inverted>
+      <Typography variant="h2" color="textPrimary">
         Contributions in {new Date().getFullYear()}
-      </Header>
-      <Image
-        src="https://grass-graph.moshimo.works/images/nkgrnkgr.png"
-        fluid
-        bordered
-        style={{ padding: '10px', background: '#fff' }}
-      />
+      </Typography>
+      <Box style={{ padding: '10px', backgroundColor: '#fff' }}>
+        <img
+          src="https://grass-graph.moshimo.works/images/nkgrnkgr.png"
+          alt="githubcontribution"
+          width="100%"
+        />
+      </Box>
     </div>
   );
 };

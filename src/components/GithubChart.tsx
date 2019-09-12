@@ -1,7 +1,7 @@
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
-import { Header, Image } from 'semantic-ui-react';
-import githublogo from '../images/github-logo.svg';
+import { Typography, createStyles, makeStyles } from '@material-ui/core';
+import { GithubIconLink } from './GithubIconLink';
 
 export interface GithubChartProps {
   data: {
@@ -21,24 +21,40 @@ interface DataSet {
   borderWidth: number;
 }
 
+const useStyles = makeStyles(() =>
+  createStyles({
+    flex: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    typo: {
+      margin: '5px',
+    },
+  }),
+);
+
 export const GithubChart: React.FC<GithubChartProps> = ({
   data,
   options,
   width,
   height,
 }) => {
+  const classes = useStyles();
+
   return (
-    <div style={{ textAlign: 'center' }}>
-      <Header as="h2" inverted>
-        <a
-          href="https://github.com/nkgrnkgr"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div>
+      <div className={classes.flex}>
+        <Typography
+          className={classes.typo}
+          color="textSecondary"
+          variant="h5"
+          gutterBottom
         >
-          <span>Languages in </span>
-          <Image src={githublogo} style={{ width: '24px' }} avatar />
-        </a>
-      </Header>
+          Languages In
+        </Typography>
+        <GithubIconLink />
+      </div>
       {data && (
         <Doughnut data={data} width={width} height={height} options={options} />
       )}
