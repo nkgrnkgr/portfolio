@@ -6,7 +6,10 @@ import {
   CardContent,
   Typography,
   makeStyles,
+  CardHeader,
+  CardActions,
 } from '@material-ui/core';
+import { IconLink } from './IconLink';
 
 const useStyles = makeStyles({
   card: {
@@ -40,20 +43,18 @@ export const PortFolioCard: React.FC<Props> = ({
 
   return (
     <Card>
+      <CardHeader title={title} />
       <CardActionArea href={linkUrl}>
         <CardMedia className={classes.media} image={imageUrl} title="title" />
       </CardActionArea>
       <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
-          {title}
-        </Typography>
         <Typography
           gutterBottom
           variant="body2"
           component="p"
           color="textSecondary"
         >
-          {published}
+          {`Published: ${published}`}
         </Typography>
         <Typography
           gutterBottom
@@ -64,6 +65,10 @@ export const PortFolioCard: React.FC<Props> = ({
           {description}
         </Typography>
       </CardContent>
+      <CardActions>
+        <IconLink title="github" url={githubUrl} className="fab fa-github" />
+        <IconLink title="open app" url={linkUrl} className="fas fa-rocket" />
+      </CardActions>
     </Card>
   );
 };

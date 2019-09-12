@@ -19,7 +19,7 @@ export const PortFolioLayout: React.FC<{}> = () => {
       <Typography align="center" color="textPrimary" variant="h2" gutterBottom>
         Portfolio
       </Typography>
-      <Grid container spacing={3} direction="row" alignItems="center">
+      <Grid container spacing={3} direction="row" alignItems="flex-start">
         {portfolioData.map(d => {
           const { title, date, comment, linkUrl, githubUrl, image, chips } = d;
 

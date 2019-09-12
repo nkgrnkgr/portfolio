@@ -3,11 +3,11 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { Avatar } from '@material-ui/core';
+import { Avatar, Tooltip, Link } from '@material-ui/core';
 import logo from '../images/logo.svg';
 import { TabLayout } from './TabLayout';
 import { HideOnScroll } from './HideOnScroll';
-import { GithubIconLink } from './GithubIconLink';
+import { IconLink } from './IconLink';
 
 interface Props {
   menuItems: string[];
@@ -47,11 +47,19 @@ export const PageHeader: React.FC<Props> = ({
       <HideOnScroll>
         <AppBar color="default">
           <Toolbar>
-            <Avatar alt="nokogiri" src={logo} className={classes.avatar} />
+            <Tooltip title="home">
+              <Link href="/">
+                <Avatar alt="nokogiri" src={logo} className={classes.avatar} />
+              </Link>
+            </Tooltip>
             <Typography variant="h6" className={classes.title}>
               Nokogiri
             </Typography>
-            <GithubIconLink />
+            <IconLink
+              title="github"
+              url="https://github.com/nkgrnkgr"
+              className="fab fa-github"
+            />
           </Toolbar>
           <TabLayout
             menuItems={menuItems}

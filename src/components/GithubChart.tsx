@@ -1,7 +1,7 @@
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import { Typography, createStyles, makeStyles } from '@material-ui/core';
-import { GithubIconLink } from './GithubIconLink';
+import { IconLink } from './IconLink';
 
 export interface GithubChartProps {
   data: {
@@ -53,7 +53,11 @@ export const GithubChart: React.FC<GithubChartProps> = ({
         >
           Languages In
         </Typography>
-        <GithubIconLink />
+        <IconLink
+          title="github"
+          url="https://github.com/nkgrnkgr"
+          className="fab fa-github"
+        />
       </div>
       {data && (
         <Doughnut data={data} width={width} height={height} options={options} />
