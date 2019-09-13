@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     color: '#fff',
   },
   box: {
-    maxWidth: '40%',
+    maxWidth: '400px',
     margin: '0 auto',
   },
 });
