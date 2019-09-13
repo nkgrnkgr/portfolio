@@ -8,6 +8,7 @@ import './App.css';
 import { PageHeader } from './components/PageHeader';
 import { ScrollTop } from './components/ScrollTop';
 import { SlideLayout } from './components/SlideLayout';
+import { LinkLayout } from './components/LinksLayout';
 
 type AppProps = RouteComponentProps;
 
@@ -43,6 +44,7 @@ const App: React.FC<AppProps> = ({ history }) => {
         <Route path="/home" component={HomeLayout} />
         <Route path="/portfolio" component={PortFolioLayout} />
         <Route path="/slide" component={SlideLayout} />
+        <Route path="/links" component={LinkLayout} />
         <ScrollTop />
       </Container>
     </div>
