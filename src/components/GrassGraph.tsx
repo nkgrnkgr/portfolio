@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Box, Link, makeStyles } from '@material-ui/core';
+import { Typography, Box, Link, makeStyles, Hidden } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -19,11 +19,20 @@ export const GrassGraph: React.FC = () => {
       </Typography>
       <Box className={image}>
         <Link href="https://github.com/nkgrnkgr" target="_blank" rel="noopener">
-          <img
-            src="https://grass-graph.moshimo.works/images/nkgrnkgr.png"
-            alt="githubcontribution"
-            width="100%"
-          />
+          <Hidden smUp>
+            <img
+              src="https://grass-graph.moshimo.works/images/a-know.png?rotate=270"
+              alt="githubcontribution"
+              width="100%"
+            />
+          </Hidden>
+          <Hidden smDown>
+            <img
+              src="https://grass-graph.moshimo.works/images/nkgrnkgr.png"
+              alt="githubcontribution"
+              width="100%"
+            />
+          </Hidden>
         </Link>
       </Box>
     </div>

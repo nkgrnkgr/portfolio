@@ -4,6 +4,7 @@ import {
   makeStyles,
   Grid,
   CircularProgress,
+  Hidden,
 } from '@material-ui/core';
 import { GithubChart } from './GithubChart';
 import { Nokogiri } from './Nokogiri';
