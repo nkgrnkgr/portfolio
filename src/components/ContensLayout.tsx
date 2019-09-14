@@ -46,7 +46,7 @@ export const ContensLayout: React.FC<Props> = ({ pageTitle, contens }) => {
           } = d;
 
           return (
-            <Grid item xs={12} sm={3} key={title}>
+            <Grid item xs={12} sm={3} key={linkUrl}>
               <ContensCard
                 imageUrl={imageUrl}
                 title={title}
