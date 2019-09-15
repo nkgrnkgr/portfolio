@@ -8,7 +8,10 @@ import {
   Box,
   ListItem,
   ListItemSecondaryAction,
+  Icon,
+  IconButton,
 } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import { IconLink } from './IconLink';
 import { LinkData } from '../models/Link';
 
@@ -28,7 +31,7 @@ export const LinkLayout: React.FC = () => {
   return (
     <div className={root}>
       {LinkData.map(link => (
-        <Box className={box}>
+        <Box className={box} key={link.title}>
           <List component="nav" aria-label="nav">
             <ListItem>
               <ListItemIcon>
@@ -51,6 +54,28 @@ export const LinkLayout: React.FC = () => {
           </List>
         </Box>
       ))}
+      <Box className={box}>
+        <List component="nav" aria-label="nav">
+          <ListItem>
+            <ListItemIcon>
+              <Link to="/privacypolicy">
+                <IconButton>
+                  <Icon className="fas fa-user" />
+                </IconButton>
+              </Link>
+            </ListItemIcon>
+            <ListItemText primary="Privacy Policy" />
+            <ListItemSecondaryAction>
+              <Link to="/privacypolicy">
+                <IconButton>
+                  <Icon className="fas fa-link" />
+                </IconButton>
+              </Link>
+            </ListItemSecondaryAction>
+          </ListItem>
+          <Divider />
+        </List>
+      </Box>
     </div>
   );
 };

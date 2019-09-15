@@ -12,12 +12,19 @@ import { menuItems, useGetActiveMenuIndex } from './hooks/ActiveMenu';
 import { LayoutContainer } from './components/LayoutContainer';
 
 import './App.css';
+import { PageFooter } from './components/PageFooter';
+import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 
 type AppProps = RouteComponentProps;
 
 const useStyles = makeStyles({
   app: {
     height: '140px',
+  },
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '99vh',
   },
 });
 
@@ -32,13 +39,12 @@ const App: React.FC<AppProps> = ({ history }) => {
   const classes = useStyles();
 
   return (
-    <div className="container">
+    <>
       <PageHeader
-        menuItems={menuItems}
         activeMenuIndex={activeMenuIndex}
         handleOnClickMenu={handleOnClickMenu}
       />
-      <Container>
+      <Container className={classes.root}>
         <div id="back-to-top-anchor" className={classes.app} />
         <Route
           path="/"
@@ -51,7 +57,6 @@ const App: React.FC<AppProps> = ({ history }) => {
         />
         <Route
           path="/home"
-          exact
           render={() => (
             <LayoutContainer setMenuIndex={setMenuIndex} path="home">
               <HomeLayout />
@@ -82,9 +87,18 @@ const App: React.FC<AppProps> = ({ history }) => {
             </LayoutContainer>
           )}
         />
+        <Route
+          path="/privacypolicy"
+          render={() => (
+            <LayoutContainer setMenuIndex={setMenuIndex}>
+              <PrivacyPolicyPage />
+            </LayoutContainer>
+          )}
+        />
         <ScrollTop />
+        <PageFooter />
       </Container>
-    </div>
+    </>
   );
 };
 

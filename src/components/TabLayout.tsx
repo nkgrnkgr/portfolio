@@ -1,14 +1,13 @@
 import React from 'react';
 import { Tabs, Tab } from '@material-ui/core';
+import { menuItems } from '../hooks/ActiveMenu';
 
 interface Props {
-  menuItems: string[];
   activeMenuIndex: number;
   handleOnClickMenu: (index: number) => void;
 }
 
 export const TabLayout: React.FC<Props> = ({
-  menuItems,
   activeMenuIndex,
   handleOnClickMenu,
 }) => {
