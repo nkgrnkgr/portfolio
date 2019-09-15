@@ -56,7 +56,7 @@ export const PageHeader: React.FC<Props> = ({
             </Typography>
             <IconLink
               title="github"
-              url="https://github.com/nkgrnkgr"
+              url="https://github.com/nkgrnkgr/portfolio"
               className="fab fa-github"
             />
           </Toolbar>
