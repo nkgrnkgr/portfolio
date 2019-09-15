@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { currentMenuIndex } from '../hooks/ActiveMenu';
+import { currentMenuIndex, NOT_EXSIT_IN_MENU } from '../hooks/ActiveMenu';
 
 interface Props {
   setMenuIndex: (index: number) => void;
-  path: string;
+  path?: string;
 }
 
 export const LayoutContainer: React.FC<Props> = ({
@@ -12,7 +12,8 @@ export const LayoutContainer: React.FC<Props> = ({
   children,
 }) => {
   useEffect(() => {
-    setMenuIndex(currentMenuIndex(path));
+    const index = path ? currentMenuIndex(path) : NOT_EXSIT_IN_MENU;
+    setMenuIndex(index);
   }, []);
 
   return <>{children}</>;

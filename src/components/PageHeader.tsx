@@ -8,9 +8,9 @@ import logo from '../images/logo.svg';
 import { TabLayout } from './TabLayout';
 import { HideOnScroll } from './HideOnScroll';
 import { IconLink } from './IconLink';
+import { NOT_EXSIT_IN_MENU } from '../hooks/ActiveMenu';
 
 interface Props {
-  menuItems: string[];
   activeMenuIndex: number;
   handleOnClickMenu: (index: number) => void;
 }
@@ -36,7 +36,6 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const PageHeader: React.FC<Props> = ({
-  menuItems,
   activeMenuIndex,
   handleOnClickMenu,
 }) => {
@@ -61,11 +60,12 @@ export const PageHeader: React.FC<Props> = ({
               className="fab fa-github"
             />
           </Toolbar>
-          <TabLayout
-            menuItems={menuItems}
-            activeMenuIndex={activeMenuIndex}
-            handleOnClickMenu={handleOnClickMenu}
-          />
+          {activeMenuIndex !== NOT_EXSIT_IN_MENU && (
+            <TabLayout
+              activeMenuIndex={activeMenuIndex}
+              handleOnClickMenu={handleOnClickMenu}
+            />
+          )}
         </AppBar>
       </HideOnScroll>
     </div>

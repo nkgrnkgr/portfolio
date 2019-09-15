@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 export const menuItems = ['home', 'portfolio', 'slide', 'links'];
 
+export const NOT_EXSIT_IN_MENU = -1;
+
 export const useGetActiveMenuIndex = (
   initialValue = 0,
 ): [number, (menuIndex: number) => void] => {
