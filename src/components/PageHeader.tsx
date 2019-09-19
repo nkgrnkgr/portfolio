@@ -1,20 +1,19 @@
 import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { Avatar, Link, Tooltip } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { Avatar, Tooltip, Link } from '@material-ui/core';
+import { NOT_EXSIT_IN_MENU } from '../contexts/ActiveMenuProvider';
 import logo from '../images/logo.svg';
-import { TabLayout } from './TabLayout';
 import { HideOnScroll } from './HideOnScroll';
 import { IconLink } from './IconLink';
-import { NOT_EXSIT_IN_MENU } from '../hooks/ActiveMenu';
+import { TabLayout } from './TabLayout';
 
 interface Props {
   activeMenuIndex: number;
   handleOnClickMenu: (index: number) => void;
 }
-
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {

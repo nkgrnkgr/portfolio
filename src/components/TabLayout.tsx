@@ -1,6 +1,6 @@
+import { Tab, Tabs } from '@material-ui/core';
 import React from 'react';
-import { Tabs, Tab } from '@material-ui/core';
-import { menuItems } from '../hooks/ActiveMenu';
+import { MENU_ITEMS } from '../contexts/ActiveMenuProvider';
 
 interface Props {
   activeMenuIndex: number;
@@ -17,7 +17,7 @@ export const TabLayout: React.FC<Props> = ({
 
   return (
     <Tabs centered value={activeMenuIndex} onChange={handleOnChange}>
-      {menuItems.map(item => (
+      {MENU_ITEMS.map(item => (
         <Tab key={item} label={item} />
       ))}
     </Tabs>
