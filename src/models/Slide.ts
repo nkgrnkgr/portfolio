@@ -2,12 +2,35 @@ import aws from '../images/aws.png';
 import es6 from '../images/es6.png';
 import kt from '../images/kt.png';
 import fb from '../images/fb.png';
+import fivemin from '../images/5min.png';
+import hooks from '../images/hooks.png';
+import pyhu from '../images/pyhu.png';
 import scrum from '../images/scrum.png';
 import react1 from '../images/react1.png';
 import react from '../images/react.png';
 import { ContensModel } from './Contens';
 
 export const SlideData: ContensModel[] = [
+  {
+    published: '2019/07/19',
+    linkUrl: 'https://speakerdeck.com/undefined_name/learning-hooks',
+    imageUrl: hooks,
+    tags: ['React', 'Hooks'],
+  },
+  {
+    published: '2019/06/26',
+    linkUrl:
+      'https://speakerdeck.com/undefined_name/5fen-teshao-jie-suruensiniafalsezhi-de-sheng-chan-shu',
+    imageUrl: fivemin,
+    tags: ['Learning'],
+  },
+  {
+    published: '2019/04/25',
+    linkUrl:
+      'https://speakerdeck.com/undefined_name/deng-tan-zhe-nihuidobatukusitemiyou',
+    imageUrl: pyhu,
+    tags: ['React', 'Redux', 'TypeScript'],
+  },
   {
     published: '2019/03/24',
     linkUrl:
