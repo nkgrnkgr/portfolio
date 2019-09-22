@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Box, Typography } from '@material-ui/core';
+import { makeStyles, Box, Typography, Paper } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -21,6 +21,14 @@ export const PrivacyPolicyPage: React.FC = () => {
         >
           Privacy Policy
         </Typography>
+        <Paper>
+          <Typography variant="h5" component="h5">
+            私たちについて
+          </Typography>
+          <Typography component="p">
+            当サイトのサイトアドレスは https://www.nkgr.app です。
+          </Typography>
+        </Paper>
       </Box>
     </div>
   );
