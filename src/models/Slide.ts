@@ -8,9 +8,17 @@ import pyhu from '../images/pyhu.png';
 import scrum from '../images/scrum.png';
 import react1 from '../images/react1.png';
 import react from '../images/react.png';
+import withoutredux from '../images/withoutredux.png';
 import { ContensModel } from './Contens';
 
 export const SlideData: ContensModel[] = [
+  {
+    published: '2019/10/25',
+    linkUrl:
+      'https://speakerdeck.com/undefined_name/trying-state-manegemant-without-redux-updated',
+    imageUrl: withoutredux,
+    tags: ['React', 'Hooks'],
+  },
   {
     published: '2019/07/19',
     linkUrl: 'https://speakerdeck.com/undefined_name/learning-hooks',
