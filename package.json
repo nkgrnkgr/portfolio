@@ -17,7 +17,7 @@
     "axios": "0.18.1",
     "chart.js": "2.8.0",
     "husky": "3.1.0",
-    "lint-staged": "8.2.1",
+    "lint-staged": "9.5.0",
     "lodash": "4.17.15",
     "prettier-eslint": "9.0.0",
     "query-string": "6.8.3",
