@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { purple, teal } from '@material-ui/core/colors';
-import { createMuiTheme } from '@material-ui/core/styles';
-import ThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import App from './App';
 import './css/all.min.css';
 

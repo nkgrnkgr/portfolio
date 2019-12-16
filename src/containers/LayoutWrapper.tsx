@@ -15,6 +15,7 @@ export const LayoutWrapper: React.FC<Props> = ({ children, path }) => {
   useEffect(() => {
     const index = path ? currentMenuIndex(path) : NOT_EXSIT_IN_MENU;
     setActiveMenuIndex(index);
+    // eslint-disable-next-line
   }, []);
 
   return <>{children}</>;
