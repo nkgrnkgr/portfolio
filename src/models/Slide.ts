@@ -9,9 +9,17 @@ import scrum from '../images/scrum.png';
 import react1 from '../images/react1.png';
 import react from '../images/react.png';
 import withoutredux from '../images/withoutredux.png';
+import kintone from '../images/kintone.png';
 import { ContensModel } from './Contens';
 
 export const SlideData: ContensModel[] = [
+  {
+    published: '2019/12/18',
+    linkUrl:
+      'https://speakerdeck.com/undefined_name/kintonekai-fa-timunisiyoinsite6kayue-falsesuo-gan',
+    imageUrl: kintone,
+    tags: ['kintone', 'scrum'],
+  },
   {
     published: '2019/10/25',
     linkUrl:
