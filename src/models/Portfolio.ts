@@ -3,6 +3,7 @@ import nkgrnkgr from '../images/nkgrnkgr.png';
 import Webpack4ConfigGenerator from '../images/Webpack4ConfigGenerator.png';
 import sql2csv from '../images/sql2csv.png';
 import InHouseUse from '../images/inhouseUse.gif';
+import googletaskclient from '../images/googletaskclient.png';
 import { ContensModel } from './Contens';
 
 export const portfolioData: ContensModel[] = [
@@ -12,12 +13,11 @@ export const portfolioData: ContensModel[] = [
     description: 'Google Tasks Client Using React Redux TypeScript',
     linkUrl: 'https://tasks.nkgr.app/',
     githubUrl: 'https://github.com/nkgrnkgr/GoogleTask-ReactApp',
-    imageUrl:
-      'https://cdn1.imggmi.com/uploads/2019/9/2/48e5eb2de6e851b367e18bac35d793b7-full.png',
+    imageUrl: googletaskclient,
     tags: ['React', 'Hooks', 'Redux', 'TypeScript', 'Redux-Saga'],
   },
   {
-    title: 'Google Tasks Client',
+    title: 'PutYourHandsUp',
     published: '2019/03/08',
     description: ' Where feedback to the speakers gather.',
     linkUrl: 'https://pyhu.nkgr.app',
