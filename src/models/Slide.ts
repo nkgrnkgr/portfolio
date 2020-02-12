@@ -14,6 +14,29 @@ import { ContensModel } from './Contens';
 
 export const SlideData: ContensModel[] = [
   {
+    published: '2020/02/04',
+    linkUrl:
+      'https://speakerdeck.com/undefined_name/mopupuro-at-kintonekai-fa-timu',
+    imageUrl:
+      'https://speakerd.s3.amazonaws.com/presentations/b3527a4ee0b54f5d9f1b5566957acf6f/slide_0.jpg?599497',
+    tags: ['kintone', 'Mobprogramming'],
+  },
+  {
+    published: '2020/01/27',
+    linkUrl:
+      'https://speakerdeck.com/undefined_name/mian-qiang-hui-dedeng-tan-zhe-ni-zhi-wen-siduraike-ti-wojie-jue-suru-sabisuworirisusimasita',
+    imageUrl:
+      'https://speakerd.s3.amazonaws.com/presentations/8cba982466a54d58b967148030a9b59d/slide_0.jpg?591410',
+    tags: ['WebService', 'MeetUp'],
+  },
+  {
+    published: '2020/01/20',
+    linkUrl: 'https://speakerdeck.com/undefined_name/usefull-gitlens"',
+    imageUrl:
+      'https://speakerd.s3.amazonaws.com/presentations/c4de7fe7872b496f8fdf58f6e5d31474/slide_0.jpg?594664',
+    tags: ['VSCode', 'Plugins'],
+  },
+  {
     published: '2019/12/18',
     linkUrl:
       'https://speakerdeck.com/undefined_name/kintonekai-fa-timunisiyoinsite6kayue-falsesuo-gan',
