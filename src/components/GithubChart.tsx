@@ -2,16 +2,20 @@ import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import { Typography, createStyles, makeStyles } from '@material-ui/core';
 import { IconLink } from './IconLink';
+import { ChartData } from '../models/ChartData';
 
-export interface GithubChartProps {
-  data: {
-    labels: string[];
-    datasets: DataSet[];
-  } | null;
-  options: {};
+type GithubChartProps = {
+  data: ChartData;
+  options: {
+    legend: {
+      labels: {
+        fontColor: string;
+      };
+    };
+  };
   width: number;
   height: number;
-}
+};
 
 interface DataSet {
   label: string;
