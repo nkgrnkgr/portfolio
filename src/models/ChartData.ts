@@ -1,12 +1,23 @@
 import { LanguageColors } from './Language';
+import { GithubReposites } from '../hooks/github';
 
-export const createChartData = (json: { [key: string]: number }) => {
+export type ChartData = {
+  labels: string[];
+  datasets: {
+    label: string;
+    data: number[];
+    backgroundColor: string[];
+    borderWidth: number;
+  }[];
+};
+
+export const createChartData = (repos: GithubReposites): ChartData => {
   const labels = [];
   const data = [];
   const backgroundColor = [];
 
   /* eslint-disable */
-  for (const [key, value] of Object.entries(json)) {
+  for (const [key, value] of Object.entries(repos)) {
     if (Object.keys(LanguageColors).indexOf(key) >= 0) {
       labels.push(key);
       data.push(value);

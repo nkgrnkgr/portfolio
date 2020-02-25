@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
 import {
-  createStyles,
-  makeStyles,
-  Grid,
   CircularProgress,
+  createStyles,
+  Grid,
+  makeStyles,
 } from '@material-ui/core';
+import React from 'react';
+import { useGithubRepositories } from '../hooks/github';
+import { createChartData, height, options, width } from '../models/ChartData';
 import { GithubChart } from './GithubChart';
-import { Nokogiri } from './Nokogiri';
-import { fetchRepository } from '../services/Github';
-import { createChartData, options, width, height } from '../models/ChartData';
 import { GrassGraph } from './GrassGraph';
+import { Nokogiri } from './Nokogiri';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -23,22 +23,13 @@ const useStyles = makeStyles(() =>
 );
 
 export const HomeLayout: React.FC = () => {
-  const [isLoading, setLoadingStatus] = useState(false);
-  const [data, setData] = useState();
-
-  useEffect(() => {
-    setLoadingStatus(true);
-    fetchRepository().then(response => {
-      setData(createChartData(response.data));
-      setLoadingStatus(false);
-    });
-  }, []);
+  const { githubRepositories, isLoading, error } = useGithubRepositories();
 
   const classes = useStyles();
 
-  return (
-    <div className={classes.root}>
-      {isLoading ? (
+  if (isLoading) {
+    return (
+      <>
         <Grid
           container
           spacing={3}
@@ -49,27 +40,36 @@ export const HomeLayout: React.FC = () => {
         >
           <CircularProgress />
         </Grid>
-      ) : (
-        <Grid
-          container
-          spacing={3}
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
-          <Grid item xs={12} sm={6}>
-            <Nokogiri />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <GithubChart
-              data={data}
-              options={options}
-              width={width}
-              height={height}
-            />
-          </Grid>
+      </>
+    );
+  }
+
+  if (error) {
+    return <></>;
+  }
+
+  return (
+    <div className={classes.root}>
+      <Grid
+        container
+        spacing={3}
+        direction="row"
+        justify="center"
+        alignItems="center"
+      >
+        <Grid item xs={12} sm={6}>
+          <Nokogiri />
         </Grid>
-      )}
+        <Grid item xs={12} sm={6}>
+          <GithubChart
+            data={createChartData(githubRepositories)}
+            options={options}
+            width={width}
+            height={height}
+          />
+        </Grid>
+      </Grid>
+
       <Grid container direction="row" justify="center" alignItems="center">
         <Grid item xs={12}>
           <GrassGraph />
