@@ -7,9 +7,9 @@
     "@material-ui/icons": "4.9.1",
     "@material-ui/styles": "4.10.0",
     "@types/jest": "26.0.14",
-    "@types/lodash": "4.14.161",
-    "@types/node": "11.15.29",
-    "@types/react": "16.9.51",
+    "@types/lodash": "4.14.162",
+    "@types/node": "11.15.31",
+    "@types/react": "16.9.52",
     "@types/react-dom": "16.9.8",
     "@types/react-helmet": "6.1.0",
     "@types/react-router": "5.1.8",
@@ -47,8 +47,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "4.4.0",
-    "@typescript-eslint/parser": "4.4.0",
+    "@typescript-eslint/eslint-plugin": "4.4.1",
+    "@typescript-eslint/parser": "4.4.1",
     "eslint-config-airbnb": "18.2.0",
     "eslint-config-prettier": "6.12.0",
     "eslint-plugin-import": "2.22.1",
@@ -56,7 +56,7 @@
     "eslint-plugin-jsx-a11y": "6.3.1",
     "eslint-plugin-prefer-arrow": "1.2.2",
     "eslint-plugin-prettier": "3.1.4",
-    "eslint-plugin-react": "7.21.3",
+    "eslint-plugin-react": "7.21.4",
     "eslint-plugin-react-hooks": "4.1.2",
     "prettier": "2.1.2"
   },
