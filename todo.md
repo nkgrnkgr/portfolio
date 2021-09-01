@@ -4,4 +4,5 @@
 - ✅ tailwind.css
 - ✅ Vercel hosting
 - ✅ Recoil
+- ✅ SSG
 - ✅ Height Performance
