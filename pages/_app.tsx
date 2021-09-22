@@ -1,3 +1,4 @@
+import { CssBaseline } from '@mui/material'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import React from 'react'
@@ -16,6 +17,7 @@ const App: React.VFC<AppProps> = ({ Component, pageProps }) => (
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
       />
     </Head>
+    <CssBaseline />
     <Component {...pageProps} />
   </>
 )
