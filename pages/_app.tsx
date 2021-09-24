@@ -1,7 +1,9 @@
+import { ThemeProvider } from '@emotion/react'
 import { CssBaseline } from '@mui/material'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import React from 'react'
+import { theme } from '../Theme'
 
 const App: React.VFC<AppProps> = ({ Component, pageProps }) => (
   <>
@@ -18,7 +20,9 @@ const App: React.VFC<AppProps> = ({ Component, pageProps }) => (
       />
     </Head>
     <CssBaseline />
-    <Component {...pageProps} />
+    <ThemeProvider theme={theme}>
+      <Component {...pageProps} />
+    </ThemeProvider>
   </>
 )
 

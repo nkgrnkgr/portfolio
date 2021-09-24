@@ -1,9 +1,9 @@
-import { Chat } from '../components/Chat'
+import { Header } from '../components/Header'
 
 export const Home = (): JSX.Element => {
   return (
     <>
-      <Chat />
+      <Header />
     </>
   )
 }
