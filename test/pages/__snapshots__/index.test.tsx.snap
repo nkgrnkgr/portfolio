@@ -11,19 +11,78 @@ exports[`Home page matches snapshot 1`] = `
       <div
         class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-1t29gy6-MuiToolbar-root"
       >
-        <div
-          class="MuiAvatar-root MuiAvatar-circular css-1fqoqdp-MuiAvatar-root"
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1iwtne7-MuiTypography-root-MuiLink-root"
+          href="https://www.nkgr.app"
         >
-          <img
-            alt="logo"
-            class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
-            src="images/logo.svg"
-          />
-        </div>
+          <div
+            class="MuiAvatar-root MuiAvatar-circular css-1fqoqdp-MuiAvatar-root"
+          >
+            <img
+              alt="logo"
+              class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+              src="images/logo.svg"
+            />
+          </div>
+        </a>
         <div
           class="MuiTypography-root MuiTypography-h6 css-1juivf6-MuiTypography-root"
         >
           Nokogiri
+        </div>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1iwtne7-MuiTypography-root-MuiLink-root"
+          href="https://github.com/nkgrnkgr"
+          rel="noopener"
+          target="_blank"
+        >
+          <div
+            class="MuiAvatar-root MuiAvatar-circular css-1kk81gs-MuiAvatar-root"
+          >
+            <img
+              alt="logo"
+              class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+              src="images/github-logo.svg"
+            />
+          </div>
+        </a>
+      </div>
+      <div
+        class="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-1t29gy6-MuiToolbar-root"
+      >
+        <div
+          class="MuiBox-root css-1kt0o6l"
+        >
+          <div
+            class="MuiTabs-root css-1ujnqem-MuiTabs-root"
+          >
+            <div
+              class="MuiTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"
+              style="overflow: hidden; margin-bottom: 0px;"
+            >
+              <div
+                class="MuiTabs-flexContainer css-heg063-MuiTabs-flexContainer"
+                role="tablist"
+              >
+                <button
+                  aria-selected="true"
+                  class="MuiButtonBase-root MuiTab-root MuiTab-textColorWhite Mui-selected css-1nuo49t-MuiButtonBase-root-MuiTab-root"
+                  role="tab"
+                  tabindex="0"
+                  type="button"
+                >
+                  HOME
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
+                </button>
+              </div>
+              <span
+                class="MuiTabs-indicator css-1aquho2-MuiTabs-indicator"
+                style="left: 0px; width: 0px;"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </header>

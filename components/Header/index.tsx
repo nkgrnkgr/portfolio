@@ -1,4 +1,12 @@
-import { AppBar, Avatar, Toolbar, Typography, Link } from '@mui/material'
+import {
+  AppBar,
+  Avatar,
+  Link,
+  Tab,
+  Tabs,
+  Toolbar,
+  Typography,
+} from '@mui/material'
 import { Box } from '@mui/system'
 
 export const Header: React.VFC = () => {
@@ -19,6 +27,13 @@ export const Header: React.VFC = () => {
           >
             <Avatar src="images/github-logo.svg" alt="logo" sx={{ p: 1 }} />
           </Link>
+        </Toolbar>
+        <Toolbar>
+          <Tabs value="one" textColor="secondary" indicatorColor="secondary">
+            <Tab label="ONE" value="one" />
+            <Tab label="two" value="two" />
+            <Tab label="Three" value="three" />
+          </Tabs>
         </Toolbar>
       </AppBar>
     </Box>
