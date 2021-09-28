@@ -1,13 +1,6 @@
-import {
-  AppBar,
-  Avatar,
-  Link,
-  Tab,
-  Tabs,
-  Toolbar,
-  Typography,
-} from '@mui/material'
+import { AppBar, Avatar, Link, Toolbar, Typography } from '@mui/material'
 import { Box } from '@mui/system'
+import { PageTabs } from './PageTabs'
 
 export const Header: React.VFC = () => {
   return (
@@ -29,11 +22,7 @@ export const Header: React.VFC = () => {
           </Link>
         </Toolbar>
         <Toolbar>
-          <Tabs value="one" textColor="secondary" indicatorColor="secondary">
-            <Tab label="ONE" value="one" />
-            <Tab label="two" value="two" />
-            <Tab label="Three" value="three" />
-          </Tabs>
+          <PageTabs />
         </Toolbar>
       </AppBar>
     </Box>
